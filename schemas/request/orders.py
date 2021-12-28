@@ -1,8 +1,6 @@
-from marshmallow import Schema, fields, validate
+from marshmallow import fields
+from schemas.bases import BaseOrderSchema
 
 
-class OrderCreateRequestSchema(Schema):
-    title = fields.String(required=True, validate=validate.Length(max=100))
-    description = fields.String(required=True, validate=validate.Length(max=255))
-    stl_url = fields.String(required=True, validate=validate.Length(max=255))
-    address = fields.String(required=True, validate=validate.Length(max=255))
+class OrderCreateRequestSchema(BaseOrderSchema):
+    stl = fields.String(required=True)

@@ -1,7 +1,5 @@
-from marshmallow import Schema, fields, validate
+from schemas.bases import BaseOfferSchema
 
 
-class OfferCreateRequestSchema(Schema):
-    title = fields.String(required=True, validate=validate.Length(max=100))
-    amount = fields.Float(required=True)
-    order_pk = fields.Integer(required=True)
+class OfferCreateRequestSchema(BaseOfferSchema):
+    pass
